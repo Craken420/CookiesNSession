@@ -1,6 +1,6 @@
 const cookie = require('cookie'), // Analizador de cookies
     escapeHTML = require('escape-html'), // Escapar para hacer binding
-    url = require('url')
+    url = require('url');
 
 const middleware = {
       onRequest: function (req, res) {

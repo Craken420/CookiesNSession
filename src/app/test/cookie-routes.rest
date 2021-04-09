@@ -1,0 +1,14 @@
+###
+GET http://localhost:3003/cookie/setCookie
+
+###
+GET http://localhost:3003/cookie/setSignCookie
+
+###
+GET http://localhost:3003/cookie/signCookieWithParam?name=Test&val=ValueTested
+
+###
+GET http://localhost:3003/cookie/clearCookieByName?name=sign-cookie_name
+
+###
+GET http://localhost:3003/cookie/clearAllCookies
