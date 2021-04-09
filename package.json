@@ -1,0 +1,26 @@
+{
+  "name": "cookiesnsession",
+  "version": "1.0.0",
+  "description": "This is a practice for cookies and sessions",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Craken420/CookiesNSession.git"
+  },
+  "keywords": [
+    "cookie",
+    "session"
+  ],
+  "author": "Luis Angel Peña Zuñiga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Craken420/CookiesNSession/issues"
+  },
+  "homepage": "https://github.com/Craken420/CookiesNSession#readme"
+}
