@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "nodemon src/server.js"
+    "start": "node src/server.js",
+    "build": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,9 @@
     "cookie-parser": "^1.4.5",
     "escape-html": "^1.0.3",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "http": "0.0.1-security",
+    "session-file-store": "^1.5.0",
     "url": "^0.11.0"
   },
   "devDependencies": {
