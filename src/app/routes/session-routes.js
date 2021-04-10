@@ -48,7 +48,7 @@ router.get('/', (req, res) => {
         res.write(`<p>Session Views: ${req.session.views}</p>`);
     } else
         req.session.views = 1;
-    
+
     if (req.session.user)
         res.write(`<a href="/session/Content">Content</a><br/>
                    <a href="/session/logout">Logout</a>`);
@@ -63,5 +63,34 @@ router.get('/', (req, res) => {
     }
     res.end();
 });
+
+router.get('/login', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    if (!req.query.username || !req.query.password) {
+        res.send(`
+            <script>
+                alert("No data");
+                window.location.href = "/session";
+            </script>`);
+    }
+    else if (req.query.username == 'jose' && req.query.password == '1234') {
+        req.session.user = "jose";
+        req.session.secret = "1234";
+        req.session.admin = true;
+        res.send(`
+            <script>
+                alert("Autenticado");
+                window.location.href = "/session";
+            </script>`);
+    }
+    else {
+        res.send(`
+            <script>
+                alert("Username or password failed");
+                window.location.href = "/session";
+            </script>`);
+    }
+    res.end();
+})
 
 module.exports = router;
