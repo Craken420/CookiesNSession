@@ -91,7 +91,7 @@ router.get('/login', (req, res) => {
             </script>`);
     }
     res.end();
-})
+});
 
 router.get('/content', meaddleware.auth,
     (req, res) => {
@@ -103,5 +103,16 @@ router.get('/content', meaddleware.auth,
         res.end();
     }
 );
+
+router.get('/logout', meaddleware.auth, (req, res) => {
+    req.session.destroy();
+    res.clearCookie('session-id');
+    res.send(`
+    <script>
+        alert("Session destroyed!!");
+        window.location.href = "/session"
+    </script>`);
+    res.end();
+});
 
 module.exports = router;
