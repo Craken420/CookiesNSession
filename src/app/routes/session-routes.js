@@ -93,4 +93,15 @@ router.get('/login', (req, res) => {
     res.end();
 })
 
+router.get('/content', meaddleware.auth,
+    (req, res) => {
+        let strHtml = `<h1>Welcome ${req.session.user} You're Ahutorized</h1>
+            <p>You can only see this after you've logged in.</p>
+            <a href="/session">Home</a><br/>
+            <a href="/session/logout">Logout</a>`;
+        res.write(strHtml);
+        res.end();
+    }
+);
+
 module.exports = router;
